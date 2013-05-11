@@ -6,9 +6,10 @@ class CfgPatches   {
    };
 };
 class CfgMovesZombie {
-
+   class States {
         class AmovPercMwlkSnonWnonDf {
                                 file = "\yum_zedUndead\zmb\zombie3_walk"; 
                                 speed = 0.6; //originally 0.2 in dayz
                         };
+	};
 };
