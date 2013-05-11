@@ -1,10 +1,11 @@
+class CfgPatches   {
 class undeadYum
  {
  units[]={};
  weapons[]={};
  requiredAddons[]= {dayz_anim,dayz_code,dayz_weapons,dayz_equip,dayz_vehicles};
 };
-
+};
 
 class CfgMovesZombie : CfgMovesBasic {
         skeletonName = "OFP2_ManSkeleton";
