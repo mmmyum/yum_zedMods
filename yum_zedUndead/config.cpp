@@ -7,10 +7,7 @@ class undeadYum
 };
 };
 
-class CfgMovesZombie : CfgMovesBasic {
-        skeletonName = "OFP2_ManSkeleton";
-        gestures = "CfgGesturesMale";
-
+class CfgMovesZombie {
         class AmovPercMwlkSnonWnonDf { //removed : AmovPercMstpSnonWnonDnon
                                 file = "\yum_zedUndead\zmb\zombie3_walk"; // new animation file
                                 speed = 0.6; //originally 0.2 in dayz
