@@ -1,4 +1,7 @@
-Convert animation p:\yum_zedundead\zmb\zombie3_walk.rtm -> C:\Users\Matt\AppData\Local\Temp\ARMAaddons\yum_zedundead\zmb\zombie3_walk.rtm
+Convert animation c:\users\matt\documents\github\yum_zedundead\yum_zedundead\zmb\orig_undeadmod\Eating.rtm -> C:\Users\Matt\AppData\Local\Temp\ARMAaddons\yum_zedundead\zmb\orig_undeadmod\Eating.rtm
+Convert animation c:\users\matt\documents\github\yum_zedundead\yum_zedundead\zmb\orig_undeadmod\zombie_frantic.rtm -> C:\Users\Matt\AppData\Local\Temp\ARMAaddons\yum_zedundead\zmb\orig_undeadmod\zombie_frantic.rtm
+Convert animation c:\users\matt\documents\github\yum_zedundead\yum_zedundead\zmb\orig_undeadmod\zombie_stagger.rtm -> C:\Users\Matt\AppData\Local\Temp\ARMAaddons\yum_zedundead\zmb\orig_undeadmod\zombie_stagger.rtm
+Convert animation c:\users\matt\documents\github\yum_zedundead\yum_zedundead\zmb\zombie3_walk.rtm -> C:\Users\Matt\AppData\Local\Temp\ARMAaddons\yum_zedundead\zmb\zombie3_walk.rtm
 Cannot register unknown string STR_STATE_HEALSOLDIER
 Cannot register unknown string STR_STATE_FIRST_AID
 Cannot register unknown string STR_UI_RADARRANGE
@@ -40,7 +43,11 @@ Cannot register unknown string STR_INCOMPATIBLE_LOAD_GAME_ATTEMPT
 Warning: CfgVehicles missing in PreloadConfig - may slow down vehicle creation
 Warning: CfgAmmo missing in PreloadConfig - may slow down vehicle creation
 Warning: CfgNonAIVehicles missing in PreloadConfig - may slow down vehicle creation
-<anim = "p:\yum_zedundead\zmb\zombie3_walk.rtm">
+Cannot load font core\data\fonts\lucidaconsoleb8
+Fonts file \core\data\fonts\lucidaConsoleB8 not found
+Cannot load font core\data\fonts\lucidaconsoleb11
+Fonts file \core\data\fonts\lucidaConsoleB11 not found
+<anim = "c:\users\matt\documents\github\yum_zedundead\yum_zedundead\zmb\orig_undeadmod\Eating.rtm">
 Obsolete CfgSkeletons for OFP2_ManSkeleton, move to model.cfg
 No entry 'C:\Program Files (x86)\Bohemia Interactive\Tools\BinMake\Binarize\bin\config.cpp.CfgSkeletons'.
 No entry '.OFP2_ManSkeleton'.
@@ -52,6 +59,12 @@ Size: '/' not an array
 Size: '/' not an array
 No entry '.isDiscrete'.
 '/' is not a value
+</anim>
+<anim = "c:\users\matt\documents\github\yum_zedundead\yum_zedundead\zmb\orig_undeadmod\zombie_frantic.rtm">
+</anim>
+<anim = "c:\users\matt\documents\github\yum_zedundead\yum_zedundead\zmb\orig_undeadmod\zombie_stagger.rtm">
+</anim>
+<anim = "c:\users\matt\documents\github\yum_zedundead\yum_zedundead\zmb\zombie3_walk.rtm">
 </anim>
 Creating texture headers file...
 Texture headers file was not created - no textures found.
