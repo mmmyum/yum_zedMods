@@ -404,7 +404,7 @@ if(!isDedicated) then {
 	dayz_sourceBleeding =	objNull;
 	dayz_clientPreload = 	false;
 	dayz_panicCooldown = 	0;
-	dayz_areaAffect =		4;
+	dayz_areaAffect =		2;
 	dayz_heartBeat = 		false;
 	dayzClickTime =			0;
 	dayz_spawnDelay =		120;
