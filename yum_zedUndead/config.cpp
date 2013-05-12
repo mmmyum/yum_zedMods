@@ -4838,7 +4838,7 @@ class CfgMovesZombie: CfgMovesBasic
 			actions = "CivilWlkActionsF";
 			file = "\yum_zedUndead\zmb\zombie3_walk";
 			soundEdge[] = {0.25,0.5,0.75,1};
-			speed = 0.2;
+			speed = 0.6;
 			duty = -0.1;
 			soundOverride = "walk";
 			soundEnabled = "true";
