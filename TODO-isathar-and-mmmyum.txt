@@ -1,0 +1,16 @@
+- player_spawnCheck rewrite based on nearlocation (city, town, village, single, etc) randomly filling the area 
+      - this way we don't have to rely on nearest buildings
+  - deal with zed spawn in lag
+
+- zombie_agent.fsm rewrite for more efficiency, sleep phase, deal with despawn lag
+  - shorten retarget reaction timer - so zeds retarget very quickly
+
+- try other animations
+
+- zed retargeting and passing on to newly targeted player (secondhand zombie stuff?)
+
+- get noob friendly code ready for release 
+    - permanent zed/loot spawning and 
+    - changed max zed numbers
+    - maybe slow zed AI fix
+    - our animation addon
