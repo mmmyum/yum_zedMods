@@ -1,0 +1,78 @@
+_loc = ["BalottaAirstrip",1.5,4829.9868,2450.1104];
+_city = "BalottaAirstrip";
+_x = 4829.9868;
+_y = 2450.1104;
+_z = 1.5;
+_coords = [_x,_y,_z];
+_tries = 20;
+diag_log format ["RANDOM WORLDSPACE: Initializing... %1 | %2 %3 %4|",_city,_x,_y,_z];
+sleep 1;
+///////////////////////////////////////////////selector
+While {_tries > 1} do {
+_rndSel=floor(random 49); //select random number 0-49, then set loc based on the case number
+_loc=
+switch (_rndSel) do {
+case 0: {["BalottaAirstrip",1.5,4829.9868,2450.1104]};
+case 1: {["Berenzino",1.5,12954.624,9783.1533]};
+case 2: {["Bereznio2",1.5,12043.963,9091.3477]};
+case 3: {["BlackMountain",1.5,10276.416,12049.6640]};
+case 4: {["Bor",1.5,3320.1643,3938.3496]};
+case 5: {["Cherno",1.5,6743.8853,2581.1865]};
+case 6: {["DevilsCastle",1.5,6891.9189,11438.73]};
+case 7: {["DonsCamp",1.5,7788.2856,12613.048]};
+case 8: {["Drozhino",1.5,3442.2849,4955.7129]};
+case 9: {["Dubrovka",1.5,10445.011,9868.9912]};
+case 10: {["Electro",1.5,10480.69,2217.8027]};
+case 11: {["Factory",1.5,13060.078,7094.0596]};
+case 12: {["Gorka",1.5,9659.084,8795.334]};
+case 13: {["Grishno",1.5,5979.6953,10343.341]};
+case 14: {["Guglovo",1.5,8517.8682,6676.3276]};
+case 15: {["Gvozdno",1.5,8614.4316,11868.967]};
+case 16: {["Kabanino",1.5,5318.8369,8602.6328]};
+case 17: {["Kamyshovo",1.5,12127.406,3496.2185]};
+case 18: {["Khelm",1.5,12290.833,10904.328]};
+case 19: {["Komarovo",1.5,3654.0908,2475.9468]};
+case 20: {["Kozlovka",1.5,4483.6777,4616.1675]};
+case 21: {["Krastonav",1.5,11212.624,12256.609]};
+case 22: {["Lopatino",1.5,2780.3135,10018.82]};
+case 23: {["Moglievka",1.5,7544.5845,5148.7822]};
+case 24: {["Msta",1.5,11275.323,5495.4053]};
+case 25: {["Myshkino",1.5,2019.2487,7327.7178]};
+case 26: {["Nadezhdino",1.5,5846.4434,4706.708]};
+case 27: {["NEAF",1.5,12073.906,12724.305]};
+case 28: {["Nizhnoye",1.5,13002.393,8285.8574]};
+case 29: {["NovySobor",1.5,7074.4854,7683.4883]};
+case 30: {["NWAF",1.5,4480.0781,10375.544]};
+case 31: {["Orlovets",1.5,12146.174,7266.5801]};
+case 32: {["Pavlovo",1.5,1693.9392,3845.0657]};
+case 33: {["Petrovka",1.5,5014.1143,12493.039]};
+case 34: {["Pogorevka",1.5,4473.5957,6411.3198]};
+case 35: {["Polana",1.5,10753.393,8132.6606]};
+case 36: {["Prigorodki",1.5,7976.5557,3299.5386]};
+case 37: {["Pulkovo",1.5,4915.0903,5605.6401]};
+case 38: {["Pusta",1.5,9156.2549,3897.7598]};
+case 39: {["Pustoshka",1.5,3072.9629,7945.4404]};
+case 40: {["Rogovo",1.5,4808.0024,6805.0518]};
+case 41: {["Shakhovka",1.5,9654.5244,6555.2583]};
+case 42: {["Solnichny",1.5,13454.279,6233.647]};
+case 43: {["Soosnovka",1.5,2528.7561,6354.9839]};
+case 44: {["Staroye",1.5,10140.659,5434.4302]};
+case 45: {["StarySobor",1.5,6143.6167,7721.5176]};
+case 46: {["Tulga",1.5,12803.296,4450.7466]};
+case 47: {["Vybor",1.5,3815.0635,8865.0938]};
+case 48: {["Vyshnoye",1.5,6590.3159,6029.1128]};
+case 49: {["Zelenogorsk",1.5,2758.7144,5304.3457]};
+};
+_city = _loc select 0;
+_z = _loc select 1;
+_x = _loc select 2;
+_y = _loc select 3;
+_coords = [_x,_y,_z];
+diag_log format ["RANDOM WORLDSPACE: %1 | %2",_city,_coords];
+sleep 1;
+diag_log format ["RANDOM WORLDSPACE SELECTED: %1 | City: %2 | Coords: %3  %4 |||Try %5",_rndSel,_city,_x,_y,_tries];
+_tries = _tries - 1;
+};
+sleep 2;
+diag_log format ["RANDOM WORLDSPACE: %1 | Going to shutdown",_tries];
+exit
