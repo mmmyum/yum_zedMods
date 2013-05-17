@@ -80,7 +80,31 @@ if (_vehicle != player) then {
 	//diag_log ("Animation state: " +(_currentAnim));
 	//"amovpercmstpsnonwnondnon",
 	_attackanimations = ["zombiestandingattack1","zombiestandingattack2","zombiestandingattack3","zombiestandingattack4","zombiestandingattack5","zombiestandingattack6","zombiestandingattack7","zombiestandingattack8","zombiestandingattack9","zombiestandingattack10","zombiefeed1","zombiefeed2","zombiefeed3","zombiefeed4","zombiefeed5"];
-	if (((_unit distance player) <= 3) and ((animationState _unit) in _attackanimations)) then {
+	if (((_unit distance player) <= 4) and ((animationState _unit) in _attackanimations)) then {
+		/*
+		//yum zombies hit you go prone
+		if (!r_player_unconscious) then {
+			_neckPos = (_vehicle selectionPosition "Neck") select 2;
+			if (_neckPos < 0.6) then {
+				//_isProne = true;
+				cutText ["Knocked Down!", "PLAIN DOWN"];
+				player playActionNow "Die";
+				player switchMove "AmovPpneMstpSnonWnonDnon_healed";
+			};
+		}; */
+		/* old attempt
+		_playWeapo = currentWeapon player;
+		if (_playWeapo != "") then {
+			//type of weap find out then play appropriate prone move
+			_typePlayWeapo = inheritsFrom (configFile >> "CfgWeapons" >> _playWeapo);
+			_rifType = (configFile >> "CfgWeapons" >> "RifleCore");
+			_pisType = (configFile >> "CfgWeapons" >> "PistolCore");
+			_mgType = (configFile >> "CfgWeapons" >> "MGunCore");
+			_launchType = (configFile >> "CfgWeapons" >> "LauncherCore");
+			if ((_typePlayWeapo == _rifType) or (_typePlayWeapo == _mgType) or (_typePlayWeapo == _launchType)) then {player playMove "AidlPpneMstpSrasWrflDnon01";};
+			if (_typePlayWeapo == _pisType) then {player playMove "AidlPpneMstpSrasWpstDnon01";};
+		} else { player playMove "AidlPpneMstpSnonWnonDnon01";};
+		*/
 		//check LOS
 		private[];
 		_tPos = (getPosASL _vehicle);

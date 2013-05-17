@@ -323,7 +323,7 @@ dayz_maxAnimals = 8;
 DAYZ_agentnumber = 0;
 dayz_animalDistance = 800;
 dayz_zSpawnDistance = 1000;
-dayz_maxLocalZombies = 75;
+dayz_maxLocalZombies = 85;
 dayz_maxGlobalZombies = 200;
 dayz_maxZeds = 2000;
 dayz_spawnPos = getPosATL player;
@@ -404,7 +404,7 @@ if(!isDedicated) then {
 	dayz_sourceBleeding =	objNull;
 	dayz_clientPreload = 	false;
 	dayz_panicCooldown = 	0;
-	dayz_areaAffect =		2;
+	dayz_areaAffect =		4;
 	dayz_heartBeat = 		false;
 	dayzClickTime =			0;
 	dayz_spawnDelay =		120;

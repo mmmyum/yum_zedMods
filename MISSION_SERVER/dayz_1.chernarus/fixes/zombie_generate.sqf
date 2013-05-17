@@ -23,7 +23,7 @@ _method = "CAN_COLLIDE";
 _radius = 50;
 _method = "NONE";
 _agent = createAgent [_type, _position, [], _radius, _method];
-_agent setPosATL _position;
+//_agent setPosATL _position;
 //_agent setVariable ["origPosYum",_position];
 dayz_spawnZombies = dayz_spawnZombies + 1;
 _position = getPosATL _agent;
@@ -38,19 +38,20 @@ _agent setVariable ["myDest",_myDest];
 _agent setVariable ["newDest",_newDest];
  
 //Add some loot
-//_rnd = random 1;
-//if (_rnd > 0.3) then {
+_rnd = random 1;
+if (_rnd > 0.3) then {
+	_loot = ["Skin_Bandit2_DZ","Skin_GUE_Soldier_MG_DZ","Skin_GUE_Soldier_Sniper_DZ","Skin_GUE_Soldier_Crew_DZ","Skin_GUE_Soldier_CO_DZ","Skin_GUE_Soldier_2_DZ","Skin_Rocket_DZ","Skin_RU_Policeman_DZ","Skin_Pilot_EP1_DZ","Skin_Haris_Press_EP1_DZ","Skin_Ins_Soldier_GL_DZ","Skin_GUE_Commander_DZ","Skin_Functionary1_EP1_DZ","Skin_Priest_DZ","Skin_Rocker1_DZ","Skin_Rocker2_DZ","Skin_Rocker3_DZ","Skin_Rocker4_DZ","Skin_TK_INS_Warlord_EP1_DZ","Skin_TK_INS_Soldier_EP1_DZ","Skin_CZ_Special_Forces_GL_DES_EP1_DZ","Skin_Drake_Light_DZ","Skin_Soldier_Bodyguard_AA12_PMC_DZ","Skin_Soldier_Sniper_PMC_DZ","Skin_Soldier_TL_PMC_DZ","Skin_FR_OHara_DZ","Skin_FR_Rodriguez_DZ","Skin_CZ_Soldier_Sniper_EP1_DZ","Skin_Graves_Light_DZ"] select floor random 29;
 //    _lootType = configFile >> "CfgVehicles" >> _type >> "zombieLoot";
 //    if (isText _lootType) then {
 //        _array = []+ getArray (configFile >> "cfgLoot" >> getText(_lootType));
 //        if (count _array > 0) then {
 //            _loot = _array call BIS_fnc_selectRandomWeighted;
 //            if(!isNil "_array") then {
-//                _agent addMagazine _loot;
+                _agent addMagazine _loot;
 //            };
 //        };
 //    };
-//};
+};
  
 //Start behavior
 //_id = [_position,_agent] execFSM "\z\AddOns\dayz_code\system\zombie_agent.fsm"; //original
