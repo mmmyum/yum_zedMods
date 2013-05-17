@@ -9,6 +9,7 @@ Specifically for my dayz zed changes, there will be two sections - mission and a
 
 Mission = new spawning script, permanent loot and zeds, rewritten ai, speed very slow or normal fast or faster
 
-Addon = new zed animations, taken from Undead Mod, allows completely customizable speeds (medium pace!)
+Addon = new zed animations, taken from Undead Mod, allows completely customizable speeds (medium pace!) & adding new player skins
+download addon folder like any other. warning, skins one is not working. 
 
 everything coming soon, do not use code at this time.
