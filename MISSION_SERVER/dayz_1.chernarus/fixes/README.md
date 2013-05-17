@@ -4,10 +4,10 @@ This is not a release for the inexperienced.
 
 
 ZED STUFF:
-
+Essentials:
 player_spawnCheck.sqf
 building_spawnZombies.sqf
-zombie_generate.sqf
+zombie_generate.sqf ---change the loot part to suit your needs, i have it spawning my yum_skins
 
 Respawn: ------ still is counting dead zeds for respawn, not a big deal, only happens on disconnect
 building_REspawnZombies.sqf 
@@ -28,6 +28,7 @@ fn_damageHandlerZ - damage zeds (HS only)
 player_spawn_2 - debug monitor
 player_zombieAttack - zed damages player
 player_zombieCheck - zed detects player
+player_wearClothes - for yum_skins addon
 
 
 
