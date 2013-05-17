@@ -23,3 +23,6 @@ MYSCRIPTS = home for my airraid script and a few other snippets I've found usefu
 Now, these changes are hardly ready for public consumption - and are not noob friendly.   The addons can be run like any other addon, for skins and zed animations. 
 		However, the changes I've made to zeds regarding spawning/number of zeds/loot generation/zed AI and more - all very very alpha.  Still working out the kinks.  
 	In any case, the code is working well for me, if you are interested, please add me on steam (mmmyum) and I will invite you to the server. 
+
+
+The RAW_CODE section for the animtion mod is being changed frequently.
