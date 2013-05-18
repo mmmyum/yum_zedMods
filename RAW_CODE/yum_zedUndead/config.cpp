@@ -4752,7 +4752,7 @@ class CfgMovesZombie: CfgMovesBasic
 			limitGunMovement = 0.1;
 			enableOptics = -1;
 			ConnectTo[] = {"AidlPercMstpSnonWnonDnon",0.01,"AidlPercMstpSnonWnonDnon_player",0.01,"AmovPercMstpSnonWnonDnon_AmovPknlMstpSnonWnonDnon",0.02,"AmovPercMstpSnonWnonDnon_AmovPpneMstpSnonWnonDnon",0.02,"LadderCivilOn",1.0,"AswmPercMstpSnonWnonDnon",0.3};
-			InterpolateTo[] = {"ZombieStandingAttack1",0.1,"ZombieStandingAttack2",0.1,"ZombieStandingAttack3",0.1,"ZombieStandingAttack4",0.1,"ZombieStandingAttack5",0.1,"ZombieStandingAttack6",0.1,"ZombieStandingAttack7",0.1,"ZombieStandingAttack8",0.1,"ZombieStandingAttack9",0.1,"ZombieStandingAttack10",0.1,"ZombieStandingAttack4",0.1,"AmovPercMrunSnonWnonDf",0.02,"AmovPercMwlkSnonWnonDf",0.02,"AmovPercMwlkSnonWnonDl",0.02,"AmovPercMwlkSnonWnonDb",0.02,"AmovPercMrunSnonWnonDb",0.02,"AmovPercMevaSnonWnonDf",0.02,"AdthPercMstpSnonWnonDnon_1",0.01,"AdthPercMstpSnonWnonDnon_2",0.01,"AdthPercMstpSnonWnonDnon_3",0.01,"AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1",0.1};
+			InterpolateTo[] = {"ZombieStandingAttack1",0.1,"ZombieStandingAttack2",0.1,"ZombieStandingAttack3",0.1,"ZombieStandingAttack4",0.1,"ZombieStandingAttack5",0.1,"ZombieStandingAttack6",0.1,"ZombieStandingAttack7",0.1,"ZombieStandingAttack8",0.1,"ZombieStandingAttack9",0.1,"ZombieStandingAttack10",0.1,"ZombieStandingAttack4",0.1,"AmovPercMrunSnonWnonDf",0.02,"AmovPercMwlkSnonWnonDf",0.02,"AmovPercMwlkSnonWnonDl",0.02,"AmovPercMwlkSnonWnonDb",0.02,"AmovPercMrunSnonWnonDb",0.02,"AmovPercMevaSnonWnonDf",0.02,"AdthPercMstpSnonWnonDnon_1",0.01,"AdthPercMstpSnonWnonDnon_2",0.01,"AdthPercMstpSnonWnonDnon_3",0.01,"AmovPercMstpSnonWnonDnon_AcinPknlMwlkSnonWnonDb_1",0.1,"ZombieFeedingAttack1",0.1,"ZombieFeedingAttack2",0.1,"ZombieFeedingAttack3",0.1,"ZombieFeedingAttack4",0.1,"ZombieFeedingAttack5",0.1,"ZombieFeedingAttack6",0.1,"ZombieFeedingAttack7",0.1,"ZombieFeedingAttack8",0.1,"ZombieFeedingAttack9",0.1};
 		};
 		class AmovPknlMstpSnonWnonDnon: AmovPercMstpSnonWnonDnon
 		{
@@ -4783,7 +4783,7 @@ class CfgMovesZombie: CfgMovesBasic
 		{
 			actions = "CivilStandActions";
 			//file = "\dayz_anim\zmb\zmbKneel_zmbStand";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			soundOverride = "standup";
 			canPullTrigger = "false";
@@ -4797,8 +4797,8 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMrunSnonWnonDf: AmovPercMstpSnonWnonDnon
 		{
 			actions = "CivilRunActionsF";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
-			speed = 0.3;
+			file = "\yum_zedUndead\zmb\zombie_stagger";
+			speed = 0.25;
 			soundEdge[] = {0.25,0.5,0.75,1};
 			duty = -0.1;
 			soundOverride = "run";
@@ -4813,10 +4813,10 @@ class CfgMovesZombie: CfgMovesBasic
 			ConnectTo[] = {"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon",0.02,"AmovPercMrunSnonWnonDfVar1",0.02,"AmovPercMrunSnonWnonDfVar2",0.02};
 			InterpolateTo[] = {"AmovPercMrunSnonWnonDfVar1",0.7,"AmovPercMrunSnonWnonDfVar2",0.7,"AmovPercMstpSnonWnonDnon",0.02,"AmovPercMwlkSnonWnonDf",0.025,"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon",0.02,"CzmbAdthPercMrunSnonWnonDf",0.01};
 		};
-		class AmovPercMrunSnonWnonDfVar1: AmovPercMstpSnonWnonDnon
+		class AmovPercMrunSnonWnonDfVar1: AmovPercMrunSnonWnonDf
 		{
 			actions = "CivilRunActionsF";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			soundEdge[] = {0.25,0.5,0.75,1};
 			duty = -0.1;
@@ -4828,10 +4828,10 @@ class CfgMovesZombie: CfgMovesBasic
 			ConnectTo[] = {"AmovPercMrunSnonWnonDf",0.02,"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon",0.02,"AmovPercMrunSnonWnonDfVar2",0.02};
 			InterpolateTo[] = {"AmovPercMrunSnonWnonDf",0.7,"AmovPercMrunSnonWnonDfVar2",0.7,"AmovPercMstpSnonWnonDnon",0.02,"AmovPercMwlkSnonWnonDf",0.025,"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon",0.02,"CzmbAdthPercMrunSnonWnonDf",0.01};
 		};
-		class AmovPercMrunSnonWnonDfVar2: AmovPercMstpSnonWnonDnon
+		class AmovPercMrunSnonWnonDfVar2: AmovPercMrunSnonWnonDf
 		{
 			actions = "CivilRunActionsF";
-			file = "\dayz_anim\zmb\zombie2_walk";
+			file = "\yum_zedUndead\zmb\zombie2_walk";
 			speed = 0.15;
 			soundEdge[] = {0.25,0.5,0.75,1};
 			duty = -0.2;
@@ -4869,7 +4869,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMwlkSnonWnonDf: AmovPercMstpSnonWnonDnon
 		{
 			actions = "CivilWlkActionsF";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			soundEdge[] = {0.25,0.5,0.75,1};
 			speed = 0.3;
 			duty = -0.1;
@@ -4881,10 +4881,10 @@ class CfgMovesZombie: CfgMovesBasic
 			variantAfter[] = {3, 5, 7};
 			InterpolateTo[] = {"AmovPercMwlkSnonWnonDfVar1",0.7,"AmovPercMwlkSnonWnonDfVar2",0.7,"ZombieWalkingDeath",0.01,"AmovPercMwlkSnonWnonDfr",0.025,"AmovPercMrunSnonWnonDf",0.025,"AmovPercMwlkSnonWnonDfl",0.025,"AmovPknlMwlkSnonWnonDf",0.03,"AmovPercMevaSnonWnonDf",0.025,"AmovPercMrunSnonWnonDf_AmovPercMstpSnonWnonDnon_gthStart",0.1};
 		};
-		class AmovPercMwlkSnonWnonDfVar1: AmovPercMstpSnonWnonDnon
+		class AmovPercMwlkSnonWnonDfVar1: AmovPercMwlkSnonWnonDf
 		{
 			actions = "CivilWlkActionsF";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			soundEdge[] = {0.25,0.5,0.75,1};
 			speed = 0.25;
 			duty = -0.1;
@@ -4894,10 +4894,10 @@ class CfgMovesZombie: CfgMovesBasic
 			ConnectTo[] = {"AmovPercMwlkSnonWnonDf",0.02,"AmovPercMwlkSnonWnonDfVar2",0.02};
 			InterpolateTo[] = {"AmovPercMwlkSnonWnonDf",0.7,"AmovPercMwlkSnonWnonDfVar2",0.7,"ZombieWalkingDeath",0.01,"AmovPercMwlkSnonWnonDfr",0.025,"AmovPercMrunSnonWnonDf",0.025,"AmovPercMwlkSnonWnonDfl",0.025,"AmovPknlMwlkSnonWnonDf",0.03,"AmovPercMevaSnonWnonDf",0.025,"AmovPercMrunSnonWnonDf_AmovPercMstpSnonWnonDnon_gthStart",0.1};
 		};
-		class AmovPercMwlkSnonWnonDfVar2: AmovPercMstpSnonWnonDnon
+		class AmovPercMwlkSnonWnonDfVar2: AmovPercMwlkSnonWnonDf
 		{
 			actions = "CivilWlkActionsF";
-			file = "\dayz_anim\zmb\zombie2_walk";
+			file = "\yum_zedUndead\zmb\zombie2_walk";
 			soundEdge[] = {0.25,0.5,0.75,1};
 			speed = 0.15;
 			duty = -0.1;
@@ -4910,7 +4910,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMwlkSnonWnonDb: AmovPercMwlkSnonWnonDf
 		{
 			actions = "CivilWlkActionsB";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMwlkSnonWnonDbl",0.025,"AmovPercMwlkSnonWnonDbr",0.025,"AmovPercMrunSnonWnonDb",0.025,"AmovPknlMwlkSnonWnonDb",0.03};
@@ -5167,13 +5167,58 @@ class CfgMovesZombie: CfgMovesBasic
 		class ZombieStandingAttack9: ZombieStandingAttack1
 		{
 			file = "\dayz_anim\zmb\zombie_staticAttack3_742-833";
-			//file = "\dayz_anim\zmb\zmbStandAttack6";
 			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
 		};
 		class ZombieStandingAttack10: ZombieStandingAttack1
 		{
 			file = "\dayz_anim\zmb\zombie_staticAttack3_855-987";
-			//file = "\dayz_anim\zmb\zmbStandAttack6";
+			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+		};
+		class ZombieFeedingAttack1: ZombieStandingAttack
+		{
+			file = "\dayz_anim\zmb\zmbKneel_feedA";
+			speed = 0.1;
+			ConnectTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+		};
+		class ZombieFeedingAttack2: ZombieFeedingAttack1
+		{
+			file = "\dayz_anim\zmb\zmbKneel_feedB";
+			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+		};
+		class ZombieFeedingAttack3: ZombieFeedingAttack1
+		{
+			file = "\dayz_anim\zmb\zmbKneel_feedC";
+			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+		};
+		class ZombieFeedingAttack4: ZombieFeedingAttack1
+		{
+			file = "\dayz_anim\zmb\zmbKneel_feedD";
+			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+		};
+		class ZombieFeedingAttack5: ZombieFeedingAttack1
+		{
+			file = "\dayz_anim\zmb\zmbKneel_feedE";
+			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+		};
+		class ZombieFeedingAttack6: ZombieFeedingAttack1
+		{
+			file = "\dayz_anim\zmb\zombie_kneelFeeding2_112_301";
+			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+		};
+		class ZombieFeedingAttack7: ZombieFeedingAttack1
+		{
+			file = "\dayz_anim\zmb\zombie_kneelFeeding2_1054_1275";
+			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+		};
+		class ZombieFeedingAttack8: ZombieFeedingAttack1
+		{
+			file = "\dayz_anim\zmb\zombie_kneelFeeding3_109-308";
+			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
+		};
+		class ZombieFeedingAttack9: ZombieFeedingAttack1
+		{
+			file = "\dayz_anim\zmb\zombie_kneelFeeding3_363-574";
 			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.1};
 		};
 		class ZombieFeed: CutSceneAnimationBase
@@ -5184,8 +5229,8 @@ class CfgMovesZombie: CfgMovesBasic
 		{
 			file = "\dayz_anim\zmb\zmbKneel_feedA";
 			speed = 0.1;
-			ConnectTo[] = {"AmovPknlMstpSnonWnonDnon",0.02};
-			InterpolateTo[] = {};
+			ConnectTo[] = {"AmovPknlMstpSnonWnonDnon",0.1};
+			InterpolateTo[] = {"AmovPknlMstpSnonWnonDnon",0.1};
 		};
 		class ZombieFeed2: ZombieFeed1
 		{
@@ -5477,7 +5522,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class SprintBaseDf: StandBase
 		{
 			actions = "RifleStandEvasiveActions";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_frantic";
 			speed = 0.3;
 			soundOverride = "sprint";
 			duty = 0.5;
@@ -5502,7 +5547,7 @@ class CfgMovesZombie: CfgMovesBasic
 		};
 		class SprintBaseDfl: SprintBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_frantic";
 			speed = 0.3;
 			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Mrun_Slow_Wrfl_Dl.p3d";
 			ConnectTo[] = {};
@@ -5510,7 +5555,7 @@ class CfgMovesZombie: CfgMovesBasic
 		};
 		class SprintBaseDfr: SprintBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_frantic";
 			speed = 0.3;
 			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Mrun_Slow_Wrfl_Dr.p3d";
 			ConnectTo[] = {};
@@ -5518,7 +5563,7 @@ class CfgMovesZombie: CfgMovesBasic
 		};
 		class SprintCivilBaseDf: SprintBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_frantic";
 			speed = 0.3;
 			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Wnon.p3d";
 			visibleSize = 1.00012;
@@ -5527,14 +5572,14 @@ class CfgMovesZombie: CfgMovesBasic
 		};
 		class SprintCivilBaseDfl: SprintCivilBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_frantic";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {};
 		};
 		class SprintCivilBaseDfr: SprintCivilBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_frantic";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {};
@@ -7431,7 +7476,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMwlkSnonWnonDfl: AmovPercMwlkSnonWnonDf
 		{
 			actions = "CivilWlkActionsFL";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMrunSnonWnonDfl",0.025,"AmovPercMwlkSnonWnonDnon_transition",0.015,"AmovPercMwlkSnonWnonDf",0.025,"AmovPercMwlkSnonWnonDl",0.025,"AmovPknlMwlkSnonWnonDfl",0.03,"AmovPercMevaSnonWnonDfl",0.025,"AmovPercMrunSnonWnonDf_AmovPercMstpSnonWnonDnon_gthStart",0.1};
@@ -7439,7 +7484,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMwlkSnonWnonDl: AmovPercMwlkSnonWnonDf
 		{
 			actions = "CivilWlkActionsL";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMwlkSnonWnonDnon_transition",0.015,"AmovPercMwlkSnonWnonDfl",0.025,"AmovPercMwlkSnonWnonDbl",0.025,"AmovPercMrunSnonWnonDl",0.025,"AmovPknlMwlkSnonWnonDl",0.03};
@@ -7447,7 +7492,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMwlkSnonWnonDbl: AmovPercMwlkSnonWnonDf
 		{
 			actions = "CivilWlkActionsBL";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMwlkSnonWnonDnon_transition",0.015,"AmovPercMwlkSnonWnonDl",0.025,"AmovPercMwlkSnonWnonDb",0.025,"AmovPercMrunSnonWnonDbl",0.025,"AmovPknlMwlkSnonWnonDbl",0.03};
@@ -7455,7 +7500,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMwlkSnonWnonDbr: AmovPercMwlkSnonWnonDf
 		{
 			actions = "CivilWlkActionsBR";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMwlkSnonWnonDnon_transition",0.015,"AmovPercMwlkSnonWnonDb",0.025,"AmovPercMwlkSnonWnonDr",0.025,"AmovPercMrunSnonWnonDbr",0.025,"AmovPknlMwlkSnonWnonDbr",0.03};
@@ -7463,7 +7508,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMwlkSnonWnonDr: AmovPercMwlkSnonWnonDf
 		{
 			actions = "CivilWlkActionsR";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMwlkSnonWnonDfr",0.15,"AmovPercMwlkSnonWnonDnon_transition",0.015,"AmovPercMwlkSnonWnonDbr",0.025,"AmovPercMrunSnonWnonDr",0.025,"AmovPknlMwlkSnonWnonDr",0.03};
@@ -7471,7 +7516,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMwlkSnonWnonDfr: AmovPercMwlkSnonWnonDf
 		{
 			actions = "CivilWlkActionsFR";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMwlkSnonWnonDnon_transition",0.015,"AmovPercMwlkSnonWnonDf",0.025,"AmovPercMwlkSnonWnonDr",0.15,"AmovPercMrunSnonWnonDfr",0.025,"AmovPknlMwlkSnonWnonDfr",0.03,"AmovPercMevaSnonWnonDfr",0.025,"AmovPercMrunSnonWnonDf_AmovPercMstpSnonWnonDnon_gthStart",0.1};
@@ -7479,7 +7524,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMrunSnonWnonDfl: AmovPercMrunSnonWnonDf
 		{
 			actions = "CivilRunActionsFL";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon",0.02};
 			InterpolateTo[] = {"AmovPercMrunSnonWnonDf",0.025,"AmovPercMstpSnonWnonDnon",0.02,"AmovPercMwlkSnonWnonDfl",0.025,"AmovPercMrunSnonWnonDl",0.025,"AmovPknlMrunSnonWnonDfl",0.03,"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon",0.02,"AmovPercMevaSnonWnonDfl",0.02,"CzmbAdthPercMrunSnonWnonDf",0.01};
@@ -7487,7 +7532,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMrunSnonWnonDl: AmovPercMrunSnonWnonDfl
 		{
 			actions = "CivilRunActionsL";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMrunSnonWnonDfl",0.025,"AmovPercMstpSnonWnonDnon",0.02,"AmovPercMwlkSnonWnonDl",0.025,"AmovPercMrunSnonWnonDbl",0.025,"AmovPknlMrunSnonWnonDl",0.03,"CzmbAdthPercMrunSnonWnonDf",0.01};
@@ -7495,7 +7540,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMrunSnonWnonDbl: AmovPercMrunSnonWnonDl
 		{
 			actions = "CivilRunActionsBL";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.02,"AmovPercMwlkSnonWnonDbl",0.025,"AmovPercMrunSnonWnonDl",0.025,"AmovPercMrunSnonWnonDb",0.025,"AmovPknlMrunSnonWnonDbl",0.03,"CzmbAdthPercMrunSnonWnonDf",0.01};
@@ -7503,7 +7548,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMrunSnonWnonDb: AmovPercMrunSnonWnonDl
 		{
 			actions = "CivilRunActionsB";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.02,"AmovPercMwlkSnonWnonDb",0.025,"AmovPercMrunSnonWnonDbl",0.025,"AmovPercMrunSnonWnonDbr",0.025,"AmovPknlMrunSnonWnonDb",0.03,"CzmbAdthPercMrunSnonWnonDf",0.01};
@@ -7511,7 +7556,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMrunSnonWnonDbr: AmovPercMrunSnonWnonDl
 		{
 			actions = "CivilRunActionsBR";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.02,"AmovPercMwlkSnonWnonDbr",0.025,"AmovPercMrunSnonWnonDb",0.025,"AmovPknlMrunSnonWnonDbr",0.03,"CzmbAdthPercMrunSnonWnonDf",0.01};
@@ -7519,7 +7564,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMrunSnonWnonDr: AmovPercMrunSnonWnonDl
 		{
 			actions = "CivilRunActionsR";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {"AmovPercMstpSnonWnonDnon",0.02,"AmovPercMwlkSnonWnonDr",0.025,"AmovPercMrunSnonWnonDfr",0.025,"AmovPknlMrunSnonWnonDr",0.03,"CzmbAdthPercMrunSnonWnonDf",0.01};
@@ -7527,7 +7572,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class AmovPercMrunSnonWnonDfr: AmovPercMrunSnonWnonDl
 		{
 			actions = "CivilRunActionsFR";
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon",0.02};
 			InterpolateTo[] = {"AmovPercMwlkSnonWnonDfr",0.025,"AmovPercMrunSnonWnonDf",0.025,"AmovPercMstpSnonWnonDnon",0.02,"AmovPercMrunSnonWnonDr",0.025,"AmovPknlMrunSnonWnonDfr",0.03,"AmovPercMsprSnonWnonDf_AmovPpneMstpSnonWnonDnon",0.02,"AmovPercMevaSnonWnonDfr",0.02,"","CzmbAdthPercMrunSnonWnonDf",0.01};
@@ -12497,7 +12542,7 @@ class CfgMovesZombie: CfgMovesBasic
 			relSpeedMax = 1.09651;
 			enableOptics = 2;
 			speed = 0.3;
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			weaponIK = 2;
 			ConnectTo[] = {"AmovPercMsprSlowWpstDf_AmovPpneMstpSrasWpstDnon",0.02};
 			InterpolateTo[] = {"AmovPercMstpSrasWpstDnon",0.02,"AmovPercMwlkSrasWpstDf",0.025,"AmovPercMrunSrasWpstDf",0.02,"AmovPercMsprSlowWpstDf_AmovPpneMstpSrasWpstDnon",0.02,"AmovPercMevaSrasWpstDfl",0.02,"AmovPercMevaSrasWpstDfr",0.02};
@@ -12520,7 +12565,7 @@ class CfgMovesZombie: CfgMovesBasic
 			showHandGun = "true";
 			enableOptics = 2;
 			speed = 0.3;
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			duty = 0.5;
 			visibleSize = 1;
 			relSpeedMin = 0.687188;
@@ -12547,7 +12592,7 @@ class CfgMovesZombie: CfgMovesBasic
 			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Mrun_Slow_Wrfl_Dr.p3d";
 			showHandGun = "true";
 			enableOptics = 2;
-			file = "\yum_zedUndead\zmb\zombie3_walk";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			duty = 0.5;
 			visibleSize = 1;
 			relSpeedMin = 0.687188;
