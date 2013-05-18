@@ -20,6 +20,7 @@ private ["_center","_allBldngs","_type","_config","_canLoot","_handle","_debugA"
 			_handle = [_x] execVM "fixes\building_spawnLoot.sqf";
 			waitUntil{scriptDone _handle};
 			_x setVariable ["permaLoot",true];
+			_x setVariable ["despawnedZeds",0,true];
 		};
 		_debugC = _debugC + 1;
 	} forEach _allBldngs;
