@@ -1,6 +1,7 @@
 private ["_position","_unitTypes","_isNoone","_loot","_array","_agent","_type","_radius","_method","_myDest","_newDest","_id"];
 _position =    _this select 0;
-_unitTypes =    _this select 1;
+_doLoiter = 	_this select 1;
+_unitTypes = 	_this select 2;
 _isNoone =    {isPlayer _x} count (_position nearEntities ["AllVehicles",25]) == 0;
 _loot =    "";
 _array =    [];
@@ -23,6 +24,14 @@ _method = "CAN_COLLIDE";
 _radius = 50;
 _method = "NONE";
 _agent = createAgent [_type, _position, [], _radius, _method];
+
+if (_doLoiter) then {
+	_agent setPosATL _position;
+	//_agent setVariable ["doLoiter",true,true];
+} else {
+	_agent setVariable ["doLoiter",false,true];
+};
+
 //_agent setPosATL _position;
 //_agent setVariable ["origPosYum",_position];
 dayz_spawnZombies = dayz_spawnZombies + 1;
