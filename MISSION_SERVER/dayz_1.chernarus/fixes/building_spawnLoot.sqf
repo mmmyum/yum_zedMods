@@ -6,6 +6,8 @@ _config = 		configFile >> "CfgBuildingLoot" >> _type;
 _positions =	[] + getArray (_config >> "lootPos");
 _itemTypes =	[] + getArray (_config >> "itemType");
 _lootChance =	getNumber (_config >> "lootChance");
+
+_x setVariable ["numZombies", round(random 6), true];
 {
 	if ((random 1) < _lootChance) then {
 		_iPos = _obj modelToWorld _x;
