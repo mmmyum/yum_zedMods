@@ -34,7 +34,7 @@ if (_doLoiter) then {
 
 //_agent setPosATL _position;
 //_agent setVariable ["origPosYum",_position];
-dayz_spawnZombies = dayz_spawnZombies + 1;
+//dayz_spawnZombies = dayz_spawnZombies + 1;
 _position = getPosATL _agent;
 if (random 1 > 0.1) then {
     _agent setUnitPos "DOWN";
