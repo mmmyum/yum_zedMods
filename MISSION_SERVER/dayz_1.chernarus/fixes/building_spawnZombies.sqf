@@ -31,7 +31,7 @@ if (_canLoot) then {
 				_num = _num - 1;
 				[_iPos,true,_unitTypes] call zombie_generate;
 			};
-			sleep 0.1;
+			sleep 0.2;
 		} forEach _positions;
 		
 		
@@ -39,7 +39,7 @@ if (_canLoot) then {
 			if ((dayz_spawnZombies - sleepingZeds) > dayz_maxLocalZombies) exitwith {};
 			[_position,true,_unitTypes] call zombie_generate;
 			_num = _num - 1;
-			sleep 0.1;
+			sleep 0.2;
 		};
 		
 		_obj setVariable ["numZombies", _num, true];
@@ -55,7 +55,7 @@ if (_canLoot) then {
 			if ((dayz_spawnZombies - sleepingZeds) > dayz_maxLocalZombies) exitwith {};
 			[_position,true,_unitTypes] call zombie_generate;
 			_num = _num - 1;
-			sleep 0.1;
+			sleep 0.2;
 		};
 		diag_log("Recycling zombies...");
 		_obj setVariable ["numZombies", _num, true];
