@@ -1,7 +1,7 @@
 /*%FSM<COMPILE "E:\Games\Arma2Tools\FSM Editor Personal Edition\scriptedFSM.cfg, DayZ Zombie Agent">*/
 /*%FSM<HEAD>*/
 /*
-item0[] = {"init",0,4346,-75.000000,-250.000000,25.000000,-200.000000,0.000000,"init"};
+item0[] = {"init",0,250,-75.000000,-250.000000,25.000000,-200.000000,0.000000,"init"};
 item1[] = {"End",1,250,175.000000,-250.000000,275.000000,-200.000000,0.000000,"End"};
 item2[] = {"wait",4,218,-75.000000,0.000000,25.000000,50.000000,0.000000,"wait"};
 item3[] = {"Looking_for_Targ",2,250,-75.000000,75.000000,25.000000,125.000000,0.000000,"Looking for" \n "Target"};
@@ -63,8 +63,6 @@ item58[] = {"true",8,218,300.000000,650.000000,400.000000,700.000000,0.000000,"t
 item59[] = {"Start_Sleep",2,250,175.000000,375.000000,275.000000,425.000000,0.000000,"Start" \n "Sleep"};
 item60[] = {"true",8,218,325.000000,375.000000,425.000000,425.000000,0.000000,"true"};
 item61[] = {"",7,210,346.000000,296.000000,354.000000,304.000000,0.000000,""};
-item62[] = {"player_check",4,218,-275.000000,300.000000,-175.000000,350.000000,0.000000,"player" \n "check"};
-item63[] = {"____FAKE____",9,2520,0.000000,0.000000,0.000000,0.000000,0.000000,"____FAKE____"};
 link0[] = {0,11};
 link1[] = {0,49};
 link2[] = {2,3};
@@ -143,10 +141,8 @@ link74[] = {58,52};
 link75[] = {59,60};
 link76[] = {60,51};
 link77[] = {61,34};
-link78[] = {62,63};
-link79[] = {63,62};
-globals[] = {25.000000,1,0,0,0,640,480,1,135,6316128,1,-282.833496,595.798035,663.357056,-309.769531,756,851,1};
-window[] = {0,-1,-1,-1,-1,1271,275,1745,275,1,774};
+globals[] = {25.000000,1,0,0,0,640,480,1,135,6316128,1,-496.678955,381.951599,673.815308,-299.311035,756,851,1};
+window[] = {0,-1,-1,-1,-1,1021,25,1495,25,1,774};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -564,7 +560,7 @@ class FSM
           priority = 0.000000;
           to="Chase";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(time - _timeN) > 0.75"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(time - _timeN) > 1"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"_losCheck = _losCheck + 1;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
@@ -832,28 +828,6 @@ class FSM
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
-        };
-        /*%FSM</LINK>*/
-      };
-    };
-    /*%FSM</STATE>*/
-    /*%FSM<STATE "____FAKE____">*/
-    class ____FAKE____
-    {
-      name = "____FAKE____";
-      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
-      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
-      class Links
-      {
-        /*%FSM<LINK "player_check">*/
-        class player_check
-        {
-          priority = 0.000000;
-          to="____FAKE____";
-          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(time - _entityTime) > 20"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"_entityTime = time;" \n
-           "_isSomeone = ({(isPlayer _x) and (alive _x) and (_agent distance _x < 200)} count playableUnits) > 0;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
