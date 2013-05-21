@@ -5522,7 +5522,7 @@ class CfgMovesZombie: CfgMovesBasic
 		class SprintBaseDf: StandBase
 		{
 			actions = "RifleStandEvasiveActions";
-			file = "\yum_zedUndead\zmb\zombie_frantic";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			soundOverride = "sprint";
 			duty = 0.5;
@@ -5547,7 +5547,7 @@ class CfgMovesZombie: CfgMovesBasic
 		};
 		class SprintBaseDfl: SprintBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie_frantic";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Mrun_Slow_Wrfl_Dl.p3d";
 			ConnectTo[] = {};
@@ -5555,7 +5555,7 @@ class CfgMovesZombie: CfgMovesBasic
 		};
 		class SprintBaseDfr: SprintBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie_frantic";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Mrun_Slow_Wrfl_Dr.p3d";
 			ConnectTo[] = {};
@@ -5563,7 +5563,7 @@ class CfgMovesZombie: CfgMovesBasic
 		};
 		class SprintCivilBaseDf: SprintBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie_frantic";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			collisionShape = "ca\Anims\Characters\data\Geom\Sdr\Perc_Wnon.p3d";
 			visibleSize = 1.00012;
@@ -5572,14 +5572,14 @@ class CfgMovesZombie: CfgMovesBasic
 		};
 		class SprintCivilBaseDfl: SprintCivilBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie_frantic";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {};
 		};
 		class SprintCivilBaseDfr: SprintCivilBaseDf
 		{
-			file = "\yum_zedUndead\zmb\zombie_frantic";
+			file = "\yum_zedUndead\zmb\zombie_stagger";
 			speed = 0.3;
 			ConnectTo[] = {};
 			InterpolateTo[] = {};
