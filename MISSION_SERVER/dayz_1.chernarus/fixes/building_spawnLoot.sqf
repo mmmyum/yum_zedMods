@@ -20,7 +20,7 @@ _obj setVariable ["numZombies", round(random 6), true];
 			_index = _weights select _index;
 			_itemType = _itemTypes select _index;
 			[_itemType select 0, _itemType select 1 , _iPos, 0.0]  call spawn_loot;
-			_obj setVariable ["created",(DateToNumber date),true];
+			//_obj setVariable ["created",(DateToNumber date),true];
 		};
 	};
 } forEach _positions;
