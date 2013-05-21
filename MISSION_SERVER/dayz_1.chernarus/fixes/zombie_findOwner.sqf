@@ -7,6 +7,7 @@ _unit = _this select 0;
 //_numCleanup = _numCleanup + 1;
 //_mBuilding setVariable ["despawnedZeds", _numCleanup, true];
 //};
+/* this will only work if the zombie was detected as created by the server, shouldn't for deleted client zombies
 if (alive _agent) then {
 	//_mBuilding = nearestBuilding _agent;
 	_mBuilding = nearestObject [getPos _agent,"HouseBase"];
@@ -15,7 +16,7 @@ if (alive _agent) then {
 		_mBuilding setVariable ["numZombies", _tempZedNum + 1, true];
 	};
 };
-
+*/
 
 
 diag_log ("CLEANUP: DELETE UNCONTROLLED ZOMBIE: " + (typeOf _unit) + " OF: " + str(_unit) );

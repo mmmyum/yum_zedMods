@@ -7,9 +7,9 @@ _loot =    "";
 _array =    [];
 _agent =    objNull;
 
-if (dayz_maxCurrentZeds > dayz_maxZeds) exitwith {};
-if (dayz_CurrentZombies > dayz_maxGlobalZombies) exitwith {}; 
-if (dayz_spawnZombies > dayz_maxLocalZombies) exitwith {}; 
+if ((dayz_maxCurrentZeds - sleepingZeds) > dayz_maxZeds) exitwith {};
+if ((dayz_CurrentZombies - sleepingZeds) > dayz_maxGlobalZombies) exitwith {}; 
+if ((dayz_spawnZombies - sleepingZeds) > dayz_maxLocalZombies) exitwith {}; 
 
 //Exit if a player is nearby
 if (!_isNoone) exitWith {};
@@ -21,8 +21,10 @@ _type = _unitTypes call BIS_fnc_selectRandom;
 //Create the Group and populate it
 _radius = 50;
 _method = "CAN_COLLIDE";
-_radius = 50;
-_method = "NONE";
+if (_doLoiter) then {
+	_radius = 50;
+	_method = "NONE";
+};
 _agent = createAgent [_type, _position, [], _radius, _method];
 
 if (_doLoiter) then {
@@ -41,8 +43,10 @@ if (random 1 > 0.75) then {
 };       
 _agent setDir round(random 180); //I ADDED THIS
 //_agent setPos _position;   
+
 _myDest = getPosATL _agent;
 _newDest = getPosATL _agent;
+
 _agent setVariable ["myDest",_myDest];
 _agent setVariable ["newDest",_newDest];
  
