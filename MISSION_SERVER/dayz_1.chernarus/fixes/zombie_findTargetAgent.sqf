@@ -54,7 +54,7 @@ if (!_foundhuman) then {
 		//_vehicles = (position _agent) nearEntities [_carTypes,50];
 		if (count _vehicles > 0) then {
 			{
-				if ((!(_x isKindOf "Bicycle")) and (isEngineOn _x) and (!(_x in _targets))) exitWith {
+				if ((!(_x isKindOf "Bicycle")) and (isEngineOn _x) and (!(_x in _targets)) and (!(isPlayer _x))) exitWith {
 					_tempTarget = _x;
 					_targets set [count _targets,_x];
 				};
