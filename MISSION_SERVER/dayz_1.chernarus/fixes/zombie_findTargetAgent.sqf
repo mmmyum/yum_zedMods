@@ -9,7 +9,6 @@ _targetDistance = 300;
 _humanTypes = ["SoldierEB","SoldierWB","SoldierGB"];
 _carTypes = ["Car","MotorCycle","Tank","Air","Ship"];
 _thrownTypes = ["ThrownObjects","LitObject","SmokeShell"];
-_buildingTypes = ["Land_garaze","Land_fuelstation_w","Land_A_GeneralStore_01a","Land_A_GeneralStore_01","Land_A_Hospital","MASH","USMC_WarfareBFieldhHospital","Land_Mil_ControlTower","Land_Mil_Barracks_i","UralWreck","Land_A_statue01","Land_Church_01","Land_Church_03","Land_Church_02","Land_Church_02a","Land_Church_05R","Land_Hangar_2"];
 _foundhuman = false;
 _humanThreatDist = 20;
 
