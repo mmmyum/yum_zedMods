@@ -4,7 +4,7 @@ This is not a release for the inexperienced.
 
 
 ZED STUFF:
-Essentials:
+Essentials: ---note also requires permaLoot solution! (building_spawnLoot too!)
 player_spawnCheck.sqf
 building_spawnZombies.sqf
 zombie_generate.sqf ---change the loot part to suit your needs, i have it spawning my yum_skins
@@ -17,7 +17,7 @@ zombie_findOwner.sqf - set respawn count
 
 LOOT STUFF:
 building_spawnLoot.sqf - required for perma, minor changes
-spawn_permaLoot.sqf - my script to spawn permanent loot
+spawn_permaLoot.sqf - my script to spawn permanent loot/////////////////////yum ----call from server monitor!
 server_cleanup.fsm - might as well remove the stuff that removes loot
 
 

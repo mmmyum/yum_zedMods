@@ -25,4 +25,4 @@ Now, these changes are hardly ready for public consumption - and are not noob fr
 	In any case, the code is working well for me, if you are interested, please add me on steam (mmmyum) and I will invite you to the server. 
 
 
-The RAW_CODE section for the animtion mod is being changed frequently.
+The RAW_CODE section for the animtion mod is being changed frequently, as is the zed AI. tweaks to the rest of the files for network performance likely
