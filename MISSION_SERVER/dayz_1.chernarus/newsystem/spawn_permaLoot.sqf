@@ -25,7 +25,7 @@ private ["_center","_allBldngs","_type","_config","_canLoot","_handle","_debugA"
 	yum_locations = [["NameCityCapital","NameCity","NameVillage","NameLocal"],[_center,25000]] call BIS_fnc_locations; 
 	{
 		//put code here to check location type, then assign it a number appropriate to it, and set the radius for that type
-		 _x setVariable ["numZombies", round(random 6), true];
+		 _x setVariable ["numZombies", 200, true];
 		sleep 0.01;
 	} foreach yum_locations;
 	

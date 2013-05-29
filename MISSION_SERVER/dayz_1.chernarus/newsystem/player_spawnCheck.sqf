@@ -1,8 +1,8 @@
-private["_isAir","_inVehicle","_position","_nearby","_tooManyZs","_bPos","_bWithin","_zombiesNum","_shouldNotZeds","_spawnTime","_yumDefT","_numCleanup"];
+private ["_position","_nearestLoc","_yum","_city","_tempZedNum","_radius","_cityTypes"];
 //_isAir = vehicle player iskindof "Air";
 //_inVehicle = vehicle player isKindOf "player";
 _position = getPosATL player;
-_radius = 200;
+_radius = 500;
 _cityTypes = ["NameCityCapital","NameCity","NameVillage","NameLocal"];
 
 
@@ -15,7 +15,7 @@ if (isNull _nearestLoc) then {
 
 	_nearestLoc = (nearestLocations [_position, _cityTypes,_radius] select 0);
 	//pick nearest city from array and store it in _city
-	_yum = find _nearestLoc yum_locations;
+	_yum = yum_locations find _nearestLoc;
 	_city = yum_locations select _yum;
 	//get var and check to see if the location should spawn zeds
 	_tempZedNum = _city getVariable ["numZombies", 0];
