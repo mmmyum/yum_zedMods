@@ -14,7 +14,7 @@ _playerNear = ({(isPlayer _x) and (alive _x) and (_obj distance _x < 20)} count 
 if (_playerNear) exitwith {};
 
 //_num = _obj getVariable ["numZombies", 0];
-if (num > 0) then {
+if (_num > 0) then {
 	_unitTypes = [];
 	
 	while {_num > 0} do {
