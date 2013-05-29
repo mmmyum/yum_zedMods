@@ -11,16 +11,14 @@ _unit = _this select 0;
 if (alive _agent) then {
 	//_mBuilding = nearestBuilding _agent;
 	//_mBuilding = nearestObject [getPos _agent,"HouseBase"];
-	_radius = 100;
-	_cityTypes = ["NameCityCapital","NameCity","NameVillage","NameLocal"];
-	_nearestLoc = (nearestLocations [position _unit, _cityTypes,_radius] select 0);
-	_yum = find _nearestLoc yum_locations;
-	_city = yum_locations select _yum;
+
+	_city = _agent getVariable "originLoc";
 	_tempZedNum = _city getVariable ["numZombies", 0];
 	
 	if (!(isNil "_tempZedNum")) then {
 	//	_mBuilding setVariable ["numZombies", _tempZedNum + 1, true];
 		_city setVariable ["numZombies", _tempZedNum + 1, true];
+
 	};
 };
 

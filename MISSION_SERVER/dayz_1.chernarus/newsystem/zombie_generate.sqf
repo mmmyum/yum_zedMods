@@ -1,7 +1,9 @@
-private ["_position","_unitTypes","_isNoone","_loot","_agent","_type","_radius","_method","_myDest","_newDest","_id","_doLoiter","_rnd"];
+private ["_position","_unitTypes","_isNoone","_loot","_agent","_type","_radius","_method","_myDest","_newDest","_id","_rnd","_loc"];
 _position =    _this select 0;
-_doLoiter = 	_this select 1;
-_radius = 50; // get radius passed here when that is set up
+//_doLoiter = 	_this select 1;
+_loc 	  = 	_this select 1;
+
+_radius = 500; // get radius passed here when that is set up
 //_unitTypes = 	_this select 2;
 _isNoone =    {isPlayer _x} count (_position nearEntities ["AllVehicles",25]) == 0;
 //_loot =    "";
@@ -23,10 +25,10 @@ _type = _unitTypes call BIS_fnc_selectRandom;
 //Create the Group and populate it
 
 _method = "CAN_COLLIDE";
-if (_doLoiter) then {
+//if (_doLoiter) then {
 	//_radius = 50;
-	_method = "NONE";
-};
+//	_method = "NONE";
+//};
 _agent = createAgent [_type, _position, [], _radius, _method];
 diag_log format ["MMMYUM: ZEDSYSTEM: zombie_generate SUCCESS! | PositionAgent = %1",_position];
 
@@ -42,7 +44,8 @@ _newDest = getPosATL _agent;
 
 _agent setVariable ["myDest",_myDest];
 _agent setVariable ["newDest",_newDest];
- 
+_agent setVariable ["originLoc",_loc];
+
 //Add some loot
 _rnd = random 1;
 if (_rnd > 0.3) then {

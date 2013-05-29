@@ -1,4 +1,4 @@
-private ["_position","_nearestLoc","_yum","_city","_tempZedNum","_radius","_cityTypes"];
+private ["_position","_nearestLoc","_yum","_city","_tempZedNum","_radius","_cityTypes","_name"];
 //_isAir = vehicle player iskindof "Air";
 //_inVehicle = vehicle player isKindOf "player";
 _position = getPosATL player;
@@ -8,7 +8,7 @@ _cityTypes = ["NameCityCapital","NameCity","NameVillage","NameLocal"];
 
 if (((dayz_spawnZombies - sleepingZeds) > dayz_maxLocalZombies) or (((dayz_maxCurrentZeds - sleepingZeds) > dayz_maxZeds))) exitwith {};
 
-//_nearestLoc = nearestLocation [_position, _cityTypes]; //alternative to try
+//_nearestLoc = nearestLocation [_position, _cityTypes]; //alternative to try /// definitely should try this, as there is no check range, but we have to execute it 4 times
 _nearestLoc = (nearestLocations [_position, _cityTypes,_radius] select 0);
 
 if (isNull _nearestLoc) then {
@@ -17,6 +17,7 @@ if (isNull _nearestLoc) then {
 	_name = text _nearestLoc;
 	//pick nearest city from array and store it in _city
 	_yum = yum_locations_index find _name;
+	if (_yum == -1) exitwith {diag_log format ["MMMYUM: ZEDSYSTEM: No Location | PlayerPos: %1",_position];};
 	_city = yum_locations select _yum;
 	//get var and check to see if the location should spawn zeds
 	_tempZedNum = _city getVariable ["numZombies", 0];

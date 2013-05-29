@@ -1,4 +1,4 @@
-private ["_obj","_type","_unitTypes","_num","_playerNear","_position","_name"];
+private ["_obj","_unitTypes","_num","_position","_nLoc"];
 
 if (dayz_maxCurrentZeds > dayz_maxZeds) exitwith {};
 if ((dayz_spawnZombies - sleepingZeds) > dayz_maxLocalZombies) exitwith {}; 
@@ -12,8 +12,8 @@ _position = locationPosition (_nLoc);
 //need to get radius value here
 diag_log format ["MMMYUM: ZEDSYSTEM: building_spawnZombies start at %1",_position];
 
-_playerNear = ({(isPlayer _x) and (alive _x) and (_obj distance _x < 20)} count playableUnits) > 0;
-if (_playerNear) exitwith {};
+//_playerNear = ({(isPlayer _x) and (alive _x) and (_obj distance _x < 20)} count playableUnits) > 0;
+//if (_playerNear) exitwith {};
 
 //_num = _obj getVariable ["numZombies", 0];
 if (_num > 0) then {
@@ -21,7 +21,7 @@ if (_num > 0) then {
 	
 	while {_num > 0} do {
 		if ((dayz_spawnZombies - sleepingZeds) > dayz_maxLocalZombies) exitwith {};
-		[_position] call zombie_generate; //add radius value to pass
+		[_position,_obj] call zombie_generate; //add radius value to pass
 		_num = _num - 1;
 		sleep 0.2;
 	};
