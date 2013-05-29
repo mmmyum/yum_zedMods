@@ -30,6 +30,15 @@ private ["_center","_allBldngs","_type","_config","_canLoot","_handle","_debugA"
 		sleep 0.01;
 	} foreach yum_locations;
 	
+	yum_locations_index = [];
+	_iCnt = 0;
+	{
+	_tempName = _x getVariable ["name","nil"];
+	yum_locations_index set [_iCnt,_tempName];
+	_iCnt = _iCnt + 1;
+	} forEach yum_locations;
+	publicVariable "yum_locations_index";
+	
 	diag_log format ["MMMYUM: INIT: END: PermaSpawn INIT loot times cycled:| %1 | locations count %2",_debugC,(count yum_locations)];
 	exit
 ////////////////////////////////////////////////////////////////////////////////mmmyum

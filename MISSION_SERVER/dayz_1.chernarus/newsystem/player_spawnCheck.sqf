@@ -14,9 +14,9 @@ _nearestLoc = (nearestLocations [_position, _cityTypes,_radius] select 0);
 if (isNull _nearestLoc) then {
 	//[_position] spawn yum_zedRoam;
 } else {
-
+	_name = text _nearestLoc;
 	//pick nearest city from array and store it in _city
-	_yum = yum_locations find _nearestLoc;
+	_yum = yum_locations_index find _name;
 	_city = yum_locations select _yum;
 	//get var and check to see if the location should spawn zeds
 	_tempZedNum = _city getVariable ["numZombies", 0];
