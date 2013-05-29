@@ -1,4 +1,4 @@
-private["_obj","_type","_config","_canLoot","_unitTypes","_num","_zombieChance","_playerNear","_position","_clean","_positions","_iPos","_nearBy","_nearByPlayer"];
+private ["_obj","_type","_unitTypes","_num","_playerNear","_position","_name"];
 
 if (dayz_maxCurrentZeds > dayz_maxZeds) exitwith {};
 if ((dayz_spawnZombies - sleepingZeds) > dayz_maxLocalZombies) exitwith {}; 

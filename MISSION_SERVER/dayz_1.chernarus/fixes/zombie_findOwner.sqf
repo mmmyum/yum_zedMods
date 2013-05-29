@@ -10,16 +10,24 @@ _unit = _this select 0;
 
 if (alive _agent) then {
 	//_mBuilding = nearestBuilding _agent;
-	_mBuilding = nearestObject [getPos _agent,"HouseBase"];
-	_tempZedNum = _mBuilding getVariable ["numZombies", 0];
+	//_mBuilding = nearestObject [getPos _agent,"HouseBase"];
+	_radius = 100;
+	_cityTypes = ["NameCityCapital","NameCity","NameVillage","NameLocal"];
+	_nearestLoc = (nearestLocations [position _unit, _cityTypes,_radius] select 0);
+	_yum = find _nearestLoc yum_locations;
+	_city = yum_locations select _yum;
+	_tempZedNum = _city getVariable ["numZombies", 0];
+	
 	if (!(isNil "_tempZedNum")) then {
-		_mBuilding setVariable ["numZombies", _tempZedNum + 1, true];
+	//	_mBuilding setVariable ["numZombies", _tempZedNum + 1, true];
+		_city setVariable ["numZombies", _tempZedNum + 1, true];
 	};
 };
 
 
 
 diag_log ("CLEANUP: DELETE UNCONTROLLED ZOMBIE: " + (typeOf _unit) + " OF: " + str(_unit) );
-diag_log format ["CLEANUP YUM RESPAWN COUNT %1 | %2",_tempZedNum,_mBuilding];
+diag_log format ["CLEANUP YUM RESPAWN COUNT %1 | %2",_tempZedNum,_city];
 
 deleteVehicle _unit;
+

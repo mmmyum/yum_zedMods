@@ -1,4 +1,4 @@
-private ["_position","_unitTypes","_isNoone","_loot","_array","_agent","_type","_radius","_method","_myDest","_newDest","_id"];
+private ["_position","_unitTypes","_isNoone","_loot","_agent","_type","_radius","_method","_myDest","_newDest","_id","_doLoiter","_rnd"];
 _position =    _this select 0;
 _doLoiter = 	_this select 1;
 _radius = 50; // get radius passed here when that is set up
