@@ -28,6 +28,7 @@ if (_doLoiter) then {
 	_method = "NONE";
 };
 _agent = createAgent [_type, _position, [], _radius, _method];
+diag_log format ["MMMYUM: ZEDSYSTEM: zombie_generate SUCCESS! | PositionAgent = %1",_position];
 
 _agent setVariable ["doLoiter",false,true];
 

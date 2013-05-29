@@ -5,10 +5,12 @@ if ((dayz_spawnZombies - sleepingZeds) > dayz_maxLocalZombies) exitwith {};
 
 _obj = 			_this select 0;
 _num = 			_this select 1;
-_type = 		_obj getVariable ["type", ""];
-_name = 		_obj getVariable ["name", locationNull];
-_position = locationPostion _name;
+_nLoc = 		_this select 2;
+//_type = 		_obj getVariable ["type", ""];
+//_name = 		_obj getVariable ["name", locationNull];
+_position = locationPosition (_nLoc);
 //need to get radius value here
+diag_log format ["MMMYUM: ZEDSYSTEM: building_spawnZombies start at %1",_position];
 
 _playerNear = ({(isPlayer _x) and (alive _x) and (_obj distance _x < 20)} count playableUnits) > 0;
 if (_playerNear) exitwith {};

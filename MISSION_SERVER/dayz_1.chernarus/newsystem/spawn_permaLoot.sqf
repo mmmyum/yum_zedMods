@@ -23,6 +23,7 @@ private ["_center","_allBldngs","_type","_config","_canLoot","_handle","_debugA"
 	
 	//use this line for all locations? "" call bis_fnc_locations
 	yum_locations = [["NameCityCapital","NameCity","NameVillage","NameLocal"],[_center,25000]] call BIS_fnc_locations; 
+	publicVariable "yum_locations";
 	{
 		//put code here to check location type, then assign it a number appropriate to it, and set the radius for that type
 		 _x setVariable ["numZombies", 200, true];
