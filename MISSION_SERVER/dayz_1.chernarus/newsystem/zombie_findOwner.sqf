@@ -8,20 +8,20 @@ _unit = _this select 0;
 //_mBuilding setVariable ["despawnedZeds", _numCleanup, true];
 //};
 
-if (alive _agent) then {
+if (alive _unit) then {
 	//_mBuilding = nearestBuilding _agent;
 	//_mBuilding = nearestObject [getPos _agent,"HouseBase"];
 
-	_city = _agent getVariable "originLoc";
+	_city = _unit getVariable "originLoc";
 	_tempZedNum = _city getVariable ["numZombies", 0];
 	
 	if (!(isNil "_tempZedNum")) then {
 	//	_mBuilding setVariable ["numZombies", _tempZedNum + 1, true];
 		_city setVariable ["numZombies", _tempZedNum + 1, true];
-
-	};
 	
+	};
 	diag_log format ["CLEANUP YUM RESPAWN COUNT %1 | %2",_tempZedNum,_city];
+
 };
 
 
