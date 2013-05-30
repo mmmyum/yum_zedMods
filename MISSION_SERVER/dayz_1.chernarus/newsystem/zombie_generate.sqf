@@ -34,10 +34,13 @@ diag_log format ["MMMYUM: ZEDSYSTEM: zombie_generate SUCCESS! | PositionAgent = 
 
 _agent setVariable ["doLoiter",false,true];
 
+/*
 if (random 1 > 0.75) then {
     _agent setUnitPos "DOWN";
 };
-       
+*/
+_agent switchMove "AmovPpneMstpSnonWnonDnon_healed";      
+     
 _agent setDir round(random 180); //I ADDED THIS
 _myDest = getPosATL _agent;
 _newDest = getPosATL _agent;
