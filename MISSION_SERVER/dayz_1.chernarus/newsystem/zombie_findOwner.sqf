@@ -20,12 +20,12 @@ if (alive _agent) then {
 		_city setVariable ["numZombies", _tempZedNum + 1, true];
 
 	};
+	
+	diag_log format ["CLEANUP YUM RESPAWN COUNT %1 | %2",_tempZedNum,_city];
 };
 
 
 
 diag_log ("CLEANUP: DELETE UNCONTROLLED ZOMBIE: " + (typeOf _unit) + " OF: " + str(_unit) );
-diag_log format ["CLEANUP YUM RESPAWN COUNT %1 | %2",_tempZedNum,_city];
 
 deleteVehicle _unit;
-
