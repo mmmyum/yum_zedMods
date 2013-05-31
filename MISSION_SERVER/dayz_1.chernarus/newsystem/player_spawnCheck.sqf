@@ -19,11 +19,27 @@ if (isNull _nearestLoc) then {
 	_yum = yum_locations_index find _name;
 	if (_yum == -1) exitwith {diag_log format ["MMMYUM: ZEDSYSTEM: No Location | PlayerPos: %1",_position];};
 	_city = yum_locations select _yum;
-	//get var and check to see if the location should spawn zeds
-	_tempZedNum = _city getVariable ["numZombies", 0];
-	diag_log format ["MMMYUM: ZEDSYSTEM: player_spawnCheck | NearLocation = %1 | ToSpawn = %2 Zeds | PlayerPos = %3",_nearestLoc,_tempZedNum,_position];
-	if (_tempZedNum > 0) then {
-			[_city,_tempZedNum,_nearestLoc] spawn building_spawnZombies;//no need for this, call zombie_generate modified for city level spawning
+	
+	
+	if ((time - player_lastZombieDespawn) > 33) then {
+		if ((player_pendingSleepers > 0) or (player_pendingSpawned > 0)) then {
+			_tempZedNum = _city getVariable ["numZombies", 0];
+			_tempZedNum = (_tempZedNum - player_pendingSpawned + player_pendingSleepers);
+			
+			_city setVariable ["numZombies", _tempZedNum, true];
+			cutText [format["%1 Zeds left in Location", _tempZedNum], "PLAIN DOWN"];
+			
+			player_pendingSleepers = 0;
+			player_pendingSpawned = 0;
+		};	
+		player_lastZombieDespawn = time;
+	} else {
+		//get var and check to see if the location should spawn zeds
+		_tempZedNum = _city getVariable ["numZombies", 0];
+		diag_log format ["MMMYUM: ZEDSYSTEM: player_spawnCheck | NearLocation = %1 | ToSpawn = %2 Zeds | PlayerPos = %3",_nearestLoc,_tempZedNum,_position];
+		if (_tempZedNum > 0) then {
+				[_city,_tempZedNum,_nearestLoc] spawn building_spawnZombies;//no need for this, call zombie_generate modified for city level spawning
+		};
 	};
 };
 /* notes

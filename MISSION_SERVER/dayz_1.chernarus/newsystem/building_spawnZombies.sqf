@@ -26,7 +26,7 @@ if (_num > 0) then {
 		sleep 0.2;
 	};
 	diag_log("LOCATION ZOMBIE SPAWN...");
-	_obj setVariable ["numZombies", _num, true];
+	//_obj setVariable ["numZombies", _num, true];
 
 };
 //};

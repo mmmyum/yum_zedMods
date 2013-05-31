@@ -65,6 +65,8 @@ if (_rnd > 0.3) then {
 //    };
 };
  
+player_pendingSpawned = player_pendingSpawned + 1;
+ 
 //Start behavior
 //_id = [_position,_agent] execFSM "\z\AddOns\dayz_code\system\zombie_agent.fsm"; //original
 _id = [_position,_agent] execFSM "fixes\zombie_agent.fsm"; //new zombie agent
