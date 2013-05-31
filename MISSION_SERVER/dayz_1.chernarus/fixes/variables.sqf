@@ -429,4 +429,8 @@ if(!isDedicated) then {
 	//};
 	//for sleep state:
 	sleepingZeds = 0;
+	
+	player_lastZombieDespawn = time;
+	player_pendingSleepers = 0;
+	player_pendingSpawned = 0;
 };
