@@ -142,7 +142,7 @@ link75[] = {59,60};
 link76[] = {60,51};
 link77[] = {61,34};
 globals[] = {25.000000,1,0,0,0,640,480,1,138,6316128,1,-247.072968,412.612762,354.600586,-388.965759,755,851,1};
-window[] = {0,-1,-1,-1,-1,1121,125,1595,125,1,773};
+window[] = {0,-1,-1,-1,-1,1221,225,1695,225,1,773};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -216,7 +216,7 @@ class FSM
        "	player_pendingSleepers = player_pendingSleepers - 1;" \n
        "};" \n
        "" \n
-       "dayz_spawnZombies = dayz_spawnZombies - 1;" \n
+       "dayz_spawnZombies = dayz_spawnZombies + 1;" \n
        "" \n
        "if (!isNull _agent) then {" \n
        "	deleteVehicle _agent;" \n
