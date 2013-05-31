@@ -3,7 +3,7 @@ _unit = _this select 0;
 
 
 if (alive _unit) then {
-
+	_nearestLoc = "";
 	////locality issue cause we don't transmit the variable originLoc so the server doesn't get anything
 
 		//_city = _unit getVariable "originLoc";
