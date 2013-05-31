@@ -24,7 +24,7 @@ if (isNull _nearestLoc) then {
 	if ((time - player_lastZombieDespawn) > 33) then {
 		if ((player_pendingSleepers > 0) or (player_pendingSpawned > 0)) then {
 			_tempZedNum = _city getVariable ["numZombies", 0];
-			_tempZedNum = (_tempZedNum + (player_pendingSleepers - player_pendingSpawned);
+			_tempZedNum = (_tempZedNum + (player_pendingSleepers - player_pendingSpawned));
 			
 			_city setVariable ["numZombies", _tempZedNum, true];
 			cutText [format["%1 Zeds left in Location", _tempZedNum], "PLAIN DOWN"];
