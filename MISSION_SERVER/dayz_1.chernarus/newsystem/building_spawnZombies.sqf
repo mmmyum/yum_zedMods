@@ -18,7 +18,9 @@ diag_log format ["MMMYUM: ZEDSYSTEM: building_spawnZombies start at %1",_positio
 //_num = _obj getVariable ["numZombies", 0];
 if (_num > 0) then {
 	_unitTypes = [];
-	
+	if (_num > 20) then {
+		_num = 20;
+	};
 	while {_num > 0} do {
 		if ((dayz_spawnZombies - sleepingZeds) > dayz_maxLocalZombies) exitwith {};
 		[_position,_obj] call zombie_generate; //add radius value to pass
