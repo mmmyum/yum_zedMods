@@ -41,14 +41,14 @@ _attacked = false;
 
 		//Noise Activation
 		if (!(_refObj in _targets)) then {
-			if (_dist < (DAYZ_disAudial * 2)) then {
+			if (_dist < (DAYZ_disAudial / 2)) then {
 				if ((DAYZ_disAudial * 2)> 80) then {
 					if (!(_refObj in _targets)) then {
 						_targets set [count _targets, driver _refObj];
 						_group setVariable ["targets",_targets,true];
 					};					
 				} else {
-					if (_dist < (DAYZ_disAudial / 2)) then {
+					if (_dist < (DAYZ_disAudial / 4)) then {
 						if (!(_refObj in _targets)) then {
 							_targets set [count _targets, driver _refObj];
 							_group setVariable ["targets",_targets,true];
@@ -59,7 +59,7 @@ _attacked = false;
 		};
 		//Sight Activation
 		if (!(_refObj in _targets)) then {
-			if (_dist < (DAYZ_disVisual * 2)) then {
+			if (_dist < (DAYZ_disVisual / 2)) then {
 				//_chance = [_x,_dist,DAYZ_disVisual] call dayz_losChance;
 				//diag_log ("Visual Detection: m" + str([_x,_dist]) + " " + str(_chance));
 				//if ((random 1) < _chance) then {
