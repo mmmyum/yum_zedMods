@@ -26,6 +26,21 @@ if (alive _unit) then {
 	} forEach _cityTypes;
 		
 	_name = text _nearestLoc;
+	
+	if (count server_zedDespawnPool > 0) then {
+		_counter = 0;
+		{
+			if ((_x select 0) == _name) exitWith {
+				_tempZeds = _x select 1;
+				server_zedDespawnPool set [_counter, [_name, _tempZeds + 1]];
+			};
+			_counter = _counter + 1;
+		} forEach server_zedDespawnPool;
+	} else {
+		server_zedDespawnPool set [0, [_name,1]];
+	};
+	
+	/*
 	//pick nearest city from array and store it in _city
 	_yum = yum_locations_index find _name;
 	if (_yum == -1) exitwith {diag_log format ["MMMYUM: ZEDSYSTEM: DESPAWN: No Location | AgentPos: %1",_position];};
@@ -36,7 +51,8 @@ if (alive _unit) then {
 		_city setVariable ["numZombies", _tempZedNum + 1, true];
 
 	};
-	diag_log format ["MMMYUM: ZEDSYSTEM: DESPAWN: COUNT %1 | %2 | AgentPos: %3",_tempZedNum,_city,_position];
+	*/
+	//diag_log format ["MMMYUM: ZEDSYSTEM: DESPAWN: COUNT %1 | %2 | AgentPos: %3",_tempZedNum,_city,_position];
 
 };
 
