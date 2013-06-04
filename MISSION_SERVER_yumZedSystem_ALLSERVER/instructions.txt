@@ -1,0 +1,109 @@
+1
+
+//////////////////////////////mmmyum////////////////////////////////////////
+if (isDedicated) then {
+	diag_log "YUM: Starting";
+	_lootYum = [] execVM "fixes\spawn_permaLoot.sqf";
+	//waitUntil{scriptDone _lootYum};
+	diag_log "YUM: Ending";
+};
+
+//////////////////////////////mmmyum///////////////////////////////////////
+
+
+Above goes into server_monitor.sqf 
+
+
+After this
+								//_object enableSimulation false;
+								dayz_serverObjectMonitor set [count dayz_serverObjectMonitor,_object];
+							};
+						} forEach _myArray;
+						
+					// # END OF STREAMING #
+Before this
+					//Send the key
+					_key = format["CHILD:999:select b.class_name, ib.worldspace from instance_building ib join building b on ib.building_id = b.id where ib.instance_id = ?:[%1]:", dayZ_instance];
+					_data = "HiveEXT" callExtension _key;
+
+					diag_log("SERVER: Fetching buildings...");
+
+
+
+//////////////////////////////////////////////////////////////////////////////////
+2
+
+server_cleanup.fsm - use mine or comment out like this:
+
+
+
+//_missionObjs = allMissionObjects "WeaponHolder";
+//_qty = count _missionObjs;
+//
+//diag_log ("CLEANUP: PERFORMING ITEM CLEANUP: TOTAL " + str(_qty) + " LOOT BAGS");
+_delQty = 0;
+//{
+//	if (local _x) then {
+//		_keep = _x getVariable ["permaLoot",false];
+//               _nearby = {isPlayer _x} count (_x nearEntities [["CAManBase"], 100]);
+//		if ( (!_keep) && (_nearby==0) ) then {
+//			deleteVehicle _x;
+//			_delQty = _delQty + 1;
+//		};
+//	};
+//} forEach _missionObjs;
+//if (_delQty > 0) then {
+//	diag_log ("CLEANUP: DELETED " + str(_delQty) + " LOOT BAGS");
+//};
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+3
+Merge my compiles.sqf and variables.sqf with yours - change the zed values, or use mine to get more zeds!
+Copy paste the other files and merge if you have to! (no merge support from me - use compared in notepad++)
+You do not need to change player_monitor.fsm or sqf if you see it being changed.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+4
+In your mission init, you need to override with my files:  Here is an example:
+
+
+
+//Load in compiled functions
+//yum//call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\variables.sqf";				//Initilize the Variables (IMPORTANT: Must happen very early)
+call compile preprocessFileLineNumbers "fixes\variables.sqf";  //YUM
+progressLoadingScreen 0.1;
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\init\publicEH.sqf";				//Initilize the publicVariable event handlers
+progressLoadingScreen 0.2;
+call compile preprocessFileLineNumbers "\z\addons\dayz_code\medical\setup_functions_med.sqf";	//Functions used by CLIENT for medical
+progressLoadingScreen 0.4;
+call compile preprocessFileLineNumbers "compiles.sqf";
+//yum changes
+//my changes /////////////////////////////////custom overrides
+call compile preprocessFileLineNumbers "fixes\compiles.sqf"; //Compile regular functions         //compiles.sqf (override files) //incl headshot only
+zombie_findTargetAgent = compile preprocessFileLineNumbers "fixes\zombie_findTargetAgent.sqf";   //zombie_findTargetAgent.sqf (new AI)
+zombie_generate = compile preprocessFileLineNumbers "fixes\zombie_generate.sqf";                 //zombie_generate.sqf (create zombie)
+building_spawnZombies = compile preprocessFileLineNumbers "fixes\building_spawnZombies.sqf";     //building_spawnZombies.sqf (spawn zeds)
+control_zombieAgent = compile preprocessFileLineNumbers "fixes\control_zombieAgent.sqf";         //control_zombieAgent.sqf (zed AI - not sure this does anything)
+player_spawnCheck = compile preprocessFileLineNumbers "fixes\player_spawnCheck.sqf";             //player_spawnCheck.sqf (spawns zeds)
+player_zombieCheck = compile preprocessFileLineNumbers "fixes\player_zombieCheck.sqf";           //player_zombieCheck.sqf (zombie distance target, needs work)
+player_zombieAttack = compile preprocessFileLineNumbers "fixes\player_zombieAttack.sqf";         //player_zombieAttack.sqf (zombie damage)
+zombie_findOwner = compile preprocessFileLineNumbers "fixes\zombie_findOwner.sqf";               //zombie_findOwner.sqf (serverside despawn)
+player_wearClothes = compile preprocessFileLineNumbers "fixes\player_wearClothes.sqf";           //player_wearClothes.sqf (skins only)
+//end
+// end yum changes
+progressLoadingScreen 1.0;
+
+
+
+
+Add my lines, and comment out other ones defining the same thing (As I have done here).
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////
+5
+
+You're done!
+
