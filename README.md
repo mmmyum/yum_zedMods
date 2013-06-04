@@ -12,7 +12,7 @@ This Git will be the home for my dayz projects, I am going to migrate from paste
 
 Here you will find three categories:
 
-MISSION_SERVER = new spawning script, permanent loot and zeds, rewritten ai, speed very slow or normal fast or faster, as well as any other mission fixes/edited dayz code
+MISSION_SERVER = new spawning script, permanent loot and zeds, rewritten ai, speed very slow or normal fast or faster, as well as any other mission fixes/edited dayz code ///ALL SERVER SIDE ZED SYSTEM
 
 ADDONS = clientside mod for zed animations and speed, clientside/serverside mod for additional player skins - RAW_CODE is the unpacked data
 
@@ -25,4 +25,4 @@ Now, these changes are hardly ready for public consumption - and are not noob fr
 	In any case, the code is working well for me, if you are interested, please add me on steam (mmmyum) and I will invite you to the server. 
 
 
-The RAW_CODE section for the animtion mod is being changed frequently.
+***CODE IS UPDATED FREQUENTLY***
