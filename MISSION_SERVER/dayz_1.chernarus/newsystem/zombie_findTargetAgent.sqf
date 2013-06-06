@@ -26,7 +26,7 @@ if (count _targets > 0) then {
 			};
 		};
 	} forEach _targets;
-	if (_foundHuman = true) then {
+	if (_foundHuman) then {
 		_target = _tempTarget;
 		_agent setVariable ["myDest",getPos _target,false];
 	};
