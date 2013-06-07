@@ -142,7 +142,7 @@ link75[] = {59,60};
 link76[] = {60,51};
 link77[] = {61,34};
 globals[] = {25.000000,1,0,0,0,640,480,1,139,6316128,1,-400.853333,258.832214,717.211182,-26.357918,755,851,1};
-window[] = {0,-1,-1,-1,-1,1121,125,1595,125,1,773};
+window[] = {0,-1,-1,-1,-1,1246,250,1720,250,1,773};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -564,7 +564,7 @@ class FSM
           priority = 0.000000;
           to="Chase";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"(time - _timeN) > 1"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(time - _timeN) > 0.6"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/"_losCheck = _losCheck + 1;" \n
            "" \n
            "_targetPos = getPosATL _target;" \n
