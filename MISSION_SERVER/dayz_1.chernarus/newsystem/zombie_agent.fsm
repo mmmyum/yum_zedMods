@@ -2,7 +2,7 @@
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-75.000000,-250.000000,25.000000,-200.000000,0.000000,"init"};
-item1[] = {"End",1,4346,175.000000,-250.000000,275.000000,-200.000000,0.000000,"End"};
+item1[] = {"End",1,250,175.000000,-250.000000,275.000000,-200.000000,0.000000,"End"};
 item2[] = {"wait",4,218,-75.000000,0.000000,25.000000,50.000000,0.000000,"wait"};
 item3[] = {"Looking_for_Targ",2,250,-75.000000,75.000000,25.000000,125.000000,0.000000,"Looking for" \n "Target"};
 item4[] = {"Not_Alive",4,218,25.000000,300.000000,125.000000,350.000000,5.000000,"Not" \n "Alive"};
@@ -18,11 +18,11 @@ item13[] = {"",7,210,-29.000006,-29.000004,-20.999996,-20.999996,0.000000,""};
 item14[] = {"",7,210,-254.000046,146.000000,-245.999954,154.000000,0.000000,""};
 item15[] = {"Has_Target",4,218,-150.000000,175.000000,-50.000000,225.000000,1.000000,"Has" \n "Target"};
 item16[] = {"Chase",2,250,-150.000000,300.000000,-50.000000,350.000000,0.000000,"Chase"};
-item17[] = {"Time_Check",4,218,-200.000000,25.000000,-100.000000,75.000000,0.000000,"Time" \n "Check"};
+item17[] = {"Time_Check",4,218,-175.000000,0.000000,-75.000000,50.000000,0.000000,"Time" \n "Check"};
 item18[] = {"",7,210,-29.000006,146.000000,-20.999996,154.000000,0.000000,""};
 item19[] = {"",7,210,-29.000006,196.000000,-20.999996,204.000000,0.000000,""};
 item20[] = {"Time_Check",4,218,-425.000000,0.000000,-325.000000,50.000000,0.000000,"Time" \n "Check"};
-item21[] = {"Time_Check",4,218,-225.000000,225.000000,-125.000000,275.000000,0.000000,"Time" \n "Check"};
+item21[] = {"Main_Loop",4,218,-225.000000,225.000000,-125.000000,275.000000,0.000000,"Main" \n "Loop"};
 item22[] = {"No_Target",4,218,-275.000000,375.000000,-175.000000,425.000000,3.000000,"No" \n "Target"};
 item23[] = {"",7,210,-479.000000,396.000000,-471.000000,404.000000,0.000000,""};
 item24[] = {"",7,210,-479.000000,146.000000,-471.000000,154.000000,0.000000,""};
@@ -141,8 +141,8 @@ link74[] = {58,52};
 link75[] = {59,60};
 link76[] = {60,51};
 link77[] = {61,34};
-globals[] = {25.000000,1,0,0,0,640,480,1,138,6316128,1,-247.072968,412.612762,354.600586,-388.965759,755,851,1};
-window[] = {0,-1,-1,-1,-1,1046,50,1520,50,1,773};
+globals[] = {25.000000,1,0,0,0,640,480,1,139,6316128,1,-400.853333,258.832214,717.211182,-26.357918,755,851,1};
+window[] = {0,-1,-1,-1,-1,1121,125,1595,125,1,773};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -502,16 +502,12 @@ class FSM
        "" \n
        "if (speed _agent < 0.1) then {_countr = _countr + 1} else {_countr = 0};" \n
        "" \n
-       "_targetPos = getPosATL _target;" \n
-       "" \n
-       "//Move to target" \n
-       "_agent moveTo _targetPos;" \n
-       "_agent forceSpeed _runSpeed;" \n
-       "" \n
        "if (isPlayer _target) then {" \n
-       "	if (_losCheck == 1) then {" \n
+       "	if (_losCheck >= 30) then {" \n
        "		_losCheck = 0;" \n
-       "		_cantSee = [_agent,_target] call dayz_losCheck;" \n
+       "		if ((_agent distance _target) > 200) then {" \n
+       "			_cantSee = terrainIntersectASL [(eyePos _target), (eyePos _target)];" \n
+       "		};" \n
        "	};" \n
        "} else {" \n
        "	if (_agent distance _target < 3) then {" \n
@@ -562,14 +558,18 @@ class FSM
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
-        /*%FSM<LINK "Time_Check">*/
-        class Time_Check
+        /*%FSM<LINK "Main_Loop">*/
+        class Main_Loop
         {
           priority = 0.000000;
           to="Chase";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
           condition=/*%FSM<CONDITION""">*/"(time - _timeN) > 1"/*%FSM</CONDITION""">*/;
-          action=/*%FSM<ACTION""">*/"_losCheck = _losCheck + 1;"/*%FSM</ACTION""">*/;
+          action=/*%FSM<ACTION""">*/"_losCheck = _losCheck + 1;" \n
+           "" \n
+           "_targetPos = getPosATL _target;" \n
+           "_agent moveTo _targetPos;" \n
+           "_agent forceSpeed _runSpeed;"/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
       };
