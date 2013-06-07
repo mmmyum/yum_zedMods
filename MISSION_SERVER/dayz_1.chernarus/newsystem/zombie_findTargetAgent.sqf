@@ -42,9 +42,9 @@ if (!_foundhuman) then {
 			};
 		} forEach _targets;
 		_target = _tempTarget;
-		//if (vehicle _target == _target) then {
-		//	[_target,_agent] spawn player_knockedDown;
-		//};
+		if (vehicle _target == _target) then {
+			[_target,_agent] execVM "fixes\player_knockedDown.sqf";
+		};
 		_foundhuman = true;
 	};
 	

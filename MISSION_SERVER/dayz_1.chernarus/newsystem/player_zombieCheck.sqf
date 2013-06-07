@@ -20,6 +20,9 @@ _attacked = false;
 		_chance = 1;
 		if ((_x distance player < dayz_areaAffect) and !(animationState _x == "ZombieFeed")) then {
 			if (_type == "zombie") then { [_x,"attack",(_chance),true] call dayz_zombieSpeak; };
+			
+			[_refObj,_x] execVM "fixes\player_knockedDown.sqf";
+			
 			//perform an attack
 			_last = _x getVariable["lastAttack",0];
 			_entHeight = (getPosATL _x) select 2;

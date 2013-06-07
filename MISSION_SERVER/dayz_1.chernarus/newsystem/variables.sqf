@@ -435,4 +435,7 @@ if(!isDedicated) then {
 	player_lastZombieDespawn = time;
 	player_pendingSleepers = 0;
 	player_pendingSpawned = 0;
+	
+	player_isKnockedDown =	false;
+	player_lastKnockedDown = time;
 };
