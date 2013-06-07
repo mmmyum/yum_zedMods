@@ -141,8 +141,8 @@ link74[] = {58,52};
 link75[] = {59,60};
 link76[] = {60,51};
 link77[] = {61,34};
-globals[] = {25.000000,1,0,0,0,640,480,1,139,6316128,1,-400.853333,258.832214,717.211182,-26.357918,755,851,1};
-window[] = {0,-1,-1,-1,-1,1246,250,1720,250,1,773};
+globals[] = {25.000000,1,0,0,0,640,480,1,139,6316128,1,-588.709839,70.975464,826.429260,82.860497,755,851,1};
+window[] = {0,-1,-1,-1,-1,1121,125,1595,125,1,773};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -501,7 +501,7 @@ class FSM
        "};" \n
        "" \n
        "if (speed _agent < 0.1) then {_countr = _countr + 1} else {_countr = 0};" \n
-       "" \n
+       "_targetPos = getPosATL _target;" \n
        "if (isPlayer _target) then {" \n
        "	if (_losCheck >= 30) then {" \n
        "		_losCheck = 0;" \n
@@ -623,7 +623,7 @@ class FSM
           priority = 1.000000;
           to="Reset_Targeting";
           precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
-          condition=/*%FSM<CONDITION""">*/"_agent distance _targetPos < 1"/*%FSM</CONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_agent distance _targetPos < 1) or (isNil ""_targetPos""))"/*%FSM</CONDITION""">*/;
           action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
         };
         /*%FSM</LINK>*/
