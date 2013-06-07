@@ -27,7 +27,10 @@ if (count _targets > 0) then {
 			};
 		};
 	} forEach _targets;
-	_target = _tempTarget;
+	if (!(isNull _tempTarget)) then {
+		_target = _tempTarget;
+		_agent setVariable ["myDest",getPos _target,true];
+	};
 };
 
 if (!_foundhuman) then {
