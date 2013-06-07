@@ -9,6 +9,7 @@ _targetDistance = 300;
 _humanTypes = ["SoldierEB","SoldierWB","SoldierGB"];
 _carTypes = ["Car","MotorCycle","Tank","Air","Ship"];
 _thrownTypes = ["ThrownObjects","LitObject","SmokeShell"];
+_buildingTypes = ["Land_garaze","Land_fuelstation_w","Land_A_GeneralStore_01a","Land_A_GeneralStore_01","Land_A_Hospital","MASH","USMC_WarfareBFieldhHospital","Land_Mil_ControlTower","Land_Mil_Barracks_i","UralWreck","Land_A_statue01","Land_Church_01","Land_Church_03","Land_Church_02","Land_Church_02a","Land_Church_05R","Land_Hangar_2"];
 _foundhuman = false;
 _humanThreatDist = 20;
 
@@ -26,10 +27,7 @@ if (count _targets > 0) then {
 			};
 		};
 	} forEach _targets;
-	if (_foundHuman) then {
-		_target = _tempTarget;
-		_agent setVariable ["myDest",getPos _target,false];
-	};
+	_target = _tempTarget;
 };
 
 if (!_foundhuman) then {
@@ -44,9 +42,9 @@ if (!_foundhuman) then {
 			};
 		} forEach _targets;
 		_target = _tempTarget;
-		if (vehicle _target == _target) then {
-			[_target,_agent] spawn player_knockedDown;
-		};
+		//if (vehicle _target == _target) then {
+		//	[_target,_agent] spawn player_knockedDown;
+		//};
 		_foundhuman = true;
 	};
 	
@@ -56,7 +54,7 @@ if (!_foundhuman) then {
 		//_vehicles = (position _agent) nearEntities [_carTypes,50];
 		if (count _vehicles > 0) then {
 			{
-				if ((!(_x isKindOf "Bicycle")) and (isEngineOn _x) and (!(_x in _targets)) and (!(isPlayer _x))) exitWith {
+				if ((!(_x isKindOf "Bicycle")) and (isEngineOn _x) and (!(_x in _targets))) exitWith {
 					_tempTarget = _x;
 					_targets set [count _targets,_x];
 				};
@@ -120,7 +118,7 @@ if (!_foundhuman) then {
 			
 			if ((_agent distance _tempTarget) < _targetDistance) then {
 				_target = _tempTarget;
-				_agent setVariable ["myDest",getPos _target,false];
+				_agent setVariable ["myDest",getPos _target,true];
 				_agent setVariable ["targets",_targets,true];
 			} else {
 				_tempTarget = objNull;
