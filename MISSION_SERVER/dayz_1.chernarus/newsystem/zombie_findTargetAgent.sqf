@@ -104,7 +104,9 @@ if (isNull _tempTarget) then {
 			};
 		};
 	};
-} else {
+};
+
+if (!(isNull _tempTarget)) then {
 	if (!(_tempTarget in _targets)) then {
 		_targets set [count _targets,_tempTarget];
 	};
